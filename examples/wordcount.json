@@ -1,0 +1,32 @@
+{
+  "transformConfigList":[
+    {
+      "id":1,
+      "name":"TextIO.Read",
+      "properties":[
+        {
+          "name":"filepattern",
+          "value":"gs://apache-beam-samples/shakespeare/kinglear.txt"
+        }
+      ]
+    },
+    {
+      "id":2,
+      "name":"CountWords"
+    },
+    {
+      "id":3,
+      "name":"MapToString"
+    },
+    {
+      "id":4,
+      "name":"TextIO.Write",
+      "properties":[
+        {
+          "name":"filenamePrefix",
+          "value":"gs://<bucket>/output"
+        }
+      ]
+    }
+  ]
+}

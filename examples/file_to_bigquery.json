@@ -1,0 +1,32 @@
+{
+  "transformConfigList":[
+    {
+      "id":1,
+      "name":"TextIO.Read",
+      "properties":[
+        {
+          "name":"filepattern",
+          "value":"gs://xianhualiu-bucket-1/examples/test_data.txt"
+        }
+      ]
+    },
+    {
+      "id":2,
+      "name":"StringToTableRow"
+    },
+    {
+      "id":3,
+      "name":"BigQueryIO.Write",
+      "properties":[
+        {
+          "name":"tableSpec",
+          "value":"<project>.<dataset id>.<table>"
+        },
+        {
+          "name": "jsonSchema",
+          "value": "{\"fields\":[{\"name\":\"id\",\"type\":\"INTEGER\"},{\"name\":\"text\",\"type\":\"STRING\"}]}"
+        }
+      ]
+    }
+  ]
+}
